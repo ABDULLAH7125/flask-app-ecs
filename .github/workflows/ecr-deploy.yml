@@ -1,17 +1,17 @@
 name: Build and Push Docker Image to ECR
 
 on:
-push:
-branches:
-- main
+ push:
+  branches:
+    - main
 
 jobs:
-docker:
+ docker:
 
 
-runs-on: ubuntu-latest
+ runs-on: ubuntu-latest
 
-permissions:
+ permissions:
   contents: read
 
 env:
@@ -44,4 +44,4 @@ steps:
   - name: Push Docker Image
     run: |
       docker push $AWS_ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/flask-app:latest
-```
+
